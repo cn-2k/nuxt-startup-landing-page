@@ -1,161 +1,303 @@
 <template>
   <div class="relative">
-    <div class="relative py-24 sm:py-32 md:py-40">
-      <div class="absolute inset-0 -z-10 transition-colors bg-[linear-gradient(to_right,#cbd5e1,transparent_1px),linear-gradient(to_bottom,#cbd5e1,transparent_1px)] dark:bg-[linear-gradient(to_right,#374151,transparent_1px),linear-gradient(to_bottom,#374151,transparent_1px)] bg-[size:6rem_6rem] [mask-image:radial-gradient(ellipse_80%_60%_at_90%_30%,#000_20%,transparent_100%)]"></div>
+    <PageSection
+      v-motion-fade-visible
+      column
+      class="relative md:py-40"
+    >
+      <GridPattern />
+      <div class="text-center">
+        <div class="mb-10">
+          <SectionBadge
+            text="Your awesome section badge"
+            icon="i-material-symbols-favorite"
+            href="https://nuxt.com/"
+            shiny
+          />
+        </div>
+        <h1 class="text-5xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-7xl">
+          Your <span class="magic-text">awesome</span> hero text here
+        </h1>
+        <div class="mt-6 text-lg tracking-tight text-gray-600 dark:text-gray-300">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+        </div>
+        <div class="mt-10 flex flex-wrap gap-x-6 gap-y-3 justify-center">
+          <Button>
+            Start free trial <Icon
+              name="i-heroicons-arrow-right"
+              class="w-4 h-4 ml-2"
+            />
+          </Button>
+        </div>
+      </div>
+    </PageSection>
 
-      <div class="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl gap-16 sm:gap-y-24 flex flex-col">
-        <div class="text-center">
-          <div class="mb-10">
-            <span
-              class="inline-flex items-center text-sm px-2.5 py-1.5 bg-primary-50 dark:bg-primary-400 dark:bg-opacity-10 text-primary-500 dark:text-primary-400 ring-1 ring-inset ring-primary-500 dark:ring-primary-400 ring-opacity-25 dark:ring-opacity-25 relative rounded-full font-semibold"
-            >
-              <a
-                href="https://ui.nuxt.com/pro"
-                rel="noopener noreferrer"
-                target="_blank"
-                class="focus:outline-none"
-                tabindex="-1"
-              >
-                <span
-                  class="absolute inset-0"
-                  aria-hidden="true"
-                ></span>
-              </a>
-              Made with Nuxt UI Pro
-              <span
-                class="i-heroicons-arrow-top-right-on-square-20-solid ml-1 w-4 h-4 pointer-events-none"
-              ></span>
-            </span>
-          </div>
-          <h1 class="text-5xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-7xl">
-            Build your SaaS in seconds
+    <PageSection
+      class="!pt-0"
+      column
+    >
+      <div class="relative rounded-xl">
+        <div class="w-full h-[10rem] bg-purple-600 mx-auto absolute top-[-4rem] blur-[100px] opacity-40 z-[1]"></div>
+        <ImagePlaceholder
+          border-beam
+          class="[mask-image:linear-gradient(to_bottom,_white_40%,_transparent_100%)] z-[2] relative"
+        />
+      </div>
+      <!-- <div class="flex flex-col items-center justify-center gap-[8rem] text-center px-4">
+        <div class="w-full h-[10rem] bg-zinc-950 mx-auto absolute top-[-4rem] blur-[100px] opacity-30 z-[1]"></div>
+        <div class="flex flex-col items-center justify-center gap-4 text-center">
+          <h1 class="text-6xl font-bold tracking-tight max-w-[40rem] max-[372px]:text-5xl relative hero-heading">
+            Modern & Stunning Website Components
           </h1>
-          <div class="mt-6 text-lg tracking-tight text-gray-600 dark:text-gray-300">
-            This template demonstrates most of Nuxt UI Pro's components. It's a great starting point to build your own SaaS.
-          </div>
-          <div class="mt-10 flex flex-wrap gap-x-6 gap-y-3 justify-center">
+          <p class="text-md opacity-80 max-w-[30rem] w-full relative">
+            Easy to use copy and paste components for your website. Make your
+            website 10x more stunning and modern.
+          </p>
+          <div class="flex flex-wrap gap-3 p-2 z-[99]">
             <a
-              class="focus:outline-none focus-visible:outline-0 disabled:cursor-not-allowed disabled:opacity-75 flex-shrink-0 font-medium rounded-full text-base gap-x-2.5 px-3.5 py-2.5 shadow-sm text-white dark:text-gray-900 bg-gray-900 hover:bg-gray-800 disabled:bg-gray-900 dark:bg-white dark:hover:bg-gray-100 dark:disabled:bg-white focus-visible:ring-inset focus-visible:ring-2 focus-visible:ring-primary-500 dark:focus-visible:ring-primary-400 inline-flex items-center"
-              href="/signup"
+              href="/docs/examples/application/AnimatedDock"
+              class="px-4 py-2 bg-white rounded-md text-black font-medium text-[14px] grow"
             >
-              <span class="">Get started</span>
-              <span
-                class="i-heroicons-arrow-right-20-solid flex-shrink-0 h-6 w-6"
-                aria-hidden="true"
-              ></span>
+              Browse Examples
             </a>
             <a
-              class="focus:outline-none focus-visible:outline-0 disabled:cursor-not-allowed disabled:opacity-75 flex-shrink-0 font-medium rounded-full text-base gap-x-2.5 px-3.5 py-2.5 shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-gray-700 text-gray-700 dark:text-gray-200 bg-gray-50 hover:bg-gray-100 disabled:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700/50 dark:disabled:bg-gray-800 focus-visible:ring-2 focus-visible:ring-primary-500 dark:focus-visible:ring-primary-400 inline-flex items-center"
-              href="https://github.com/nuxt-ui-pro/saas"
-              rel="noopener noreferrer"
-              target="_blank"
+              href="/pricing"
+              class="px-4 py-2 bg-zinc-950 rounded-md text-white border border-white border-opacity-10 font-medium text-[14px] grow"
             >
-              <span
-                class="i-simple-icons-github flex-shrink-0 h-6 w-6"
-                aria-hidden="true"
-              ></span>
-              <span class="">Use this template</span>
+              Pricing
             </a>
           </div>
         </div>
+        <div class="relative rounded-xl">
+          <div class="w-full h-[10rem] bg-white mx-auto absolute top-[-4rem] blur-[100px] opacity-20 z-[1]"></div>
+          <div class="rounded-[inherit] [border:calc(1.9*1px)_solid_transparent] ![mask-clip:padding-box,border-box] ![mask-composite:intersect] [mask:linear-gradient(transparent,transparent),linear-gradient(white,white)] absolute inset-0 border-2 border-transparent after:absolute after:aspect-w-1 after:aspect-h-1 after:w-[250px] after:animate-animated-beam after:bg-gradient-to-l after:from-purple-500 after:via-purple-950 after:to-transparent after:[offset-anchor:90%_50%] after:[offset-path:rect(0_auto_auto_0_round_250px)] z-[9999]"></div>
+          <img
+            width="1920"
+            height="1080"
+            src="https://i.imgur.com/tDpuune.png"
+            alt="Hero Image"
+            class="max-w-full rounded-xl h-auto mx-auto [mask-image:linear-gradient(to_bottom,_white_40%,_transparent_100%)] z-[2] relative"
+          />
+        </div>
+      </div> -->
+    </PageSection>
+
+    <PageSection v-motion-slide-visible-left>
+      <div class="lg:order-last">
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl lg:text-5xl">
+          Lorem ipsum dolor sit
+        </h2>
+        <div class="mt-6 text-lg/8 text-gray-600 dark:text-gray-300">
+          Aliqua labore laboris fugiat. Reprehenderit exercitation eu commodo. Officia nostrud sit et aliqua ea ex sunt minim incididunt sunt.
+        </div>
       </div>
-    </div>
 
-    <div
-      class="py-24 sm:py-32 !pt-0"
-      data-v-b064f615=""
-    >
-      <!-- [ --><!-- ] --><div class="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl gap-16 sm:gap-y-24 flex flex-col">
-        <!-- [ --><!----><!-- [ --><div
-          class="bg-gray-900/5 dark:bg-white/5 ring-1 ring-inset ring-gray-900/10 dark:ring-white/10 rounded-xl lg:-m-4 p-4"
-          data-v-b064f615=""
-        >
-          <div class="aspect-w-16 aspect-h-9 rounded-lg relative overflow-hidden border border-dashed border-gray-900/10 dark:border-white/10">
-            <svg
-              class="absolute inset-0 h-full w-full stroke-gray-900/10 dark:stroke-white/10"
-              fill="none"
-            ><defs><pattern
-              id="pattern-5c1e4f0e-62d5-498b-8ff0-cf77bb448c8e"
-              x="0"
-              y="0"
-              width="10"
-              height="10"
-              patternUnits="userSpaceOnUse"
-            ><path d="M-3 13 15-5M-5 5l18-18M-1 21 17 3"></path></pattern></defs><rect
-              stroke="none"
-              fill="url(#pattern-5c1e4f0e-62d5-498b-8ff0-cf77bb448c8e)"
-              width="100%"
-              height="100%"
-            ></rect></svg>
-          </div>
-        </div><!-- ] --><!----><!----><!-- ] -->
-      </div><!-- [ --><!-- ] -->
-    </div>
+      <ImagePlaceholder />
+    </PageSection>
 
-    <div
-      class="py-24 sm:py-32"
-      data-v-b064f615=""
+    <PageSection v-motion-slide-visible-right>
+      <div>
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl lg:text-5xl">
+          Lorem ipsum dolor sit
+        </h2>
+        <div class="mt-6 text-lg/8 text-gray-600 dark:text-gray-300">
+          Aliqua labore laboris fugiat. Reprehenderit exercitation eu commodo. Officia nostrud sit et aliqua ea ex sunt minim incididunt sunt.
+        </div>
+      </div>
+
+      <ImagePlaceholder />
+    </PageSection>
+
+    <PageSection
+      v-motion-pop-visible
+      column
     >
-      <!-- [ --><!-- ] --><div class="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl gap-16 sm:gap-y-24 grid lg:grid-cols-2 lg:items-center">
-        <!-- [ --><div class="">
-          <!----><h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl lg:text-5xl">
-            <!-- [ -->The power of our service<!-- ] -->
-          </h2><div class="mt-6 text-lg/8 text-gray-600 dark:text-gray-300">
-            <!-- [ -->Aliqua labore laboris fugiat. Reprehenderit exercitation eu commodo. Officia nostrud sit et aliqua ea ex sunt minim incididunt sunt.<!-- ] -->
-          </div><dl class="mt-6 leading-7 space-y-4">
-            <!-- [ --><div class="relative pl-8">
-              <dt class="font-semibold text-gray-900 dark:text-white">
-                <span
-                  class="i-heroicons-cog absolute left-0 top-1 h-5 w-5 text-primary"
-                  aria-hidden="true"
-                ></span><span>Easy to use</span>
-              </dt><dd class="text-gray-500 dark:text-gray-400 leading-6">
-                Id laborum laboris duis nostrud excepteur ut velit.
-              </dd>
-            </div><div class="relative pl-8">
-              <dt class="font-semibold text-gray-900 dark:text-white">
-                <span
-                  class="i-heroicons-check absolute left-0 top-1 h-5 w-5 text-primary"
-                  aria-hidden="true"
-                ></span><span>Reliable</span>
-              </dt><dd class="text-gray-500 dark:text-gray-400 leading-6">
-                Magna Lorem ex cillum fugiat ad enim aute irure sit duis minim.
-              </dd>
-            </div><div class="relative pl-8">
-              <dt class="font-semibold text-gray-900 dark:text-white">
-                <span
-                  class="i-heroicons-lock-closed absolute left-0 top-1 h-5 w-5 text-primary"
-                  aria-hidden="true"
-                ></span><span>Secure</span>
-              </dt><dd class="text-gray-500 dark:text-gray-400 leading-6">
-                Proident nostrud excepteur sint ut culpa consectetur aute adipisicing.
-              </dd>
-            </div><!-- ] -->
-          </dl><!---->
-        </div><!-- [ --><div
-          class="bg-gray-900/5 dark:bg-white/5 ring-1 ring-inset ring-gray-900/10 dark:ring-white/10 rounded-xl lg:-m-4 p-4"
-          data-v-b064f615=""
+      <div class="text-center flex flex-col items-center">
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl lg:text-5xl">
+          Want to see some <span class="magic-text">magic</span> cards?
+        </h2>
+        <div class="mt-6 text-lg/8 text-gray-600 dark:text-gray-300">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </div>
+      </div>
+
+      <Spotlight class="max-w-sm mx-auto grid gap-6 lg:grid-cols-3 items-start lg:max-w-none group">
+        <!-- Card #1 -->
+        <SpotlightCard
+          v-for="item in 6"
+          :key="item"
         >
-          <div class="aspect-w-16 aspect-h-9 rounded-lg relative overflow-hidden border border-dashed border-gray-900/10 dark:border-white/10">
-            <svg
-              class="absolute inset-0 h-full w-full stroke-gray-900/10 dark:stroke-white/10"
-              fill="none"
-            ><defs><pattern
-              id="pattern-5c1e4f0e-62d5-498b-8ff0-cf77bb448c8e"
-              x="0"
-              y="0"
-              width="10"
-              height="10"
-              patternUnits="userSpaceOnUse"
-            ><path d="M-3 13 15-5M-5 5l18-18M-1 21 17 3"></path></pattern></defs><rect
-              stroke="none"
-              fill="url(#pattern-5c1e4f0e-62d5-498b-8ff0-cf77bb448c8e)"
-              width="100%"
-              height="100%"
-            ></rect></svg>
+          <div class="relative h-full bg-white dark:bg-gray-900 p-6 rounded-lg z-20 overflow-hidden">
+            <!-- Radial gradient -->
+            <div class="flex flex-col h-full items-center text-center">
+              <!-- Text -->
+              <div class="grow">
+                <h2 class="text-lg text-gray-700 dark:text-white font-bold mb-1">
+                  Amazing card title
+                </h2>
+                <p class="text-sm text-slate-500">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto fugit perferendis nostrum vero atque incidunt, reprehenderit.
+                </p>
+              </div>
+            </div>
           </div>
-        </div><!-- ] --><!----><!----><!-- ] -->
-      </div><!-- [ --><!-- ] -->
-    </div>
+        </SpotlightCard>
+      </Spotlight>
+    </PageSection>
+
+    <PageSection
+      v-motion-fade-visible
+      column
+    >
+      <div class="text-center flex flex-col items-center">
+        <SectionBadge
+          text="Pricing"
+          shiny
+          only-text
+          class="mb-2"
+        />
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl lg:text-5xl">
+          Prices, prices and more prices
+        </h2>
+        <div class="mt-6 text-lg/8 text-gray-600 dark:text-gray-300">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </div>
+      </div>
+
+      <PricingTable />
+    </PageSection>
+
+    <PageSection
+      v-motion-fade-visible
+      column
+    >
+      <div class="text-center flex flex-col items-center">
+        <SectionBadge
+          text="Testimonials"
+          shiny
+          only-text
+          class="mb-2"
+        />
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl lg:text-5xl">
+          What our <span class="text-gray-500 font-light line-through">fake</span> costumers are saying
+        </h2>
+        <div class="mt-6 text-lg/8 text-gray-600 dark:text-gray-300">
+          Proident sunt exercitation minim laborum enim laboris labore esse.
+        </div>
+      </div>
+
+      <div class="relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-lg">
+        <Marquee pause-on-hover>
+          <TestimonialCard
+            v-for="item in firstTestimonialsRow"
+            :key="item.username"
+            v-bind="item"
+          />
+        </Marquee>
+        <Marquee
+          pause-on-hover
+          reverse
+        >
+          <TestimonialCard
+            v-for="item in secondTestimonialsRow"
+            :key="item.username"
+            v-bind="item"
+          />
+        </Marquee>
+        <div class="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-white dark:from-gray-900" />
+        <div class="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-white dark:from-gray-900" />
+      </div>
+    </PageSection>
+
+    <PageSection
+      v-motion-pop-visible
+      column
+    >
+      <div
+        class="rounded-xl divide-y divide-gray-200 dark:divide-gray-800 ring-1 ring-gray-200 dark:ring-gray-800 shadow relative bg-gray-100/50 dark:bg-gray-800/50"
+      >
+        <DotPattern class="[mask-image:radial-gradient(500px_circle_at_center,white,transparent)] opacity-40 lg:opacity-100" />
+        <div class="absolute inset-0 flex justify-center items-center z-[-1]">
+          <div class="w-80 h-80 bg-purple-500 rounded-full opacity-90 dark:opacity-60 blur-[120px] animate-color-cycle" />
+        </div>
+        <div class="flex flex-col gap-16 sm:gap-y-10 px-4 sm:p-6 py-24 sm:py-32 sm:px-16 relative">
+          <div class="mx-auto size-24 items-center justify-center flex rounded-[2rem] border dark:border-gray-600 bg-white/10 p-3 shadow-2xl backdrop-blur-lg dark:bg-black/10 lg:size-32">
+            <Icon
+              name="i-lucide-heart-handshake"
+              class="mx-auto size-16 text-black dark:text-white lg:size-24"
+            />
+          </div>
+          <div class="text-center">
+            <h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+              Get started/join us
+            </h2>
+            <div class="mt-2 text-lg/8 text-gray-600 dark:text-gray-300">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </div>
+            <div class="mt-5 flex items-center gap-x-6 justify-center ">
+              <Button>
+                Get started <Icon
+                  name="i-heroicons-arrow-right"
+                  class="w-4 h-4 ml-2"
+                />
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </PageSection>
   </div>
 </template>
+
+<script setup lang="ts">
+import PageSection from "@/components/PriceTable/PageSection.vue"
+import Marquee from "@/components/Marquee.vue"
+import DotPattern from "@/components/BackgroundPattern/DotPattern.vue"
+import GridPattern from "@/components/BackgroundPattern/GridPattern.vue"
+import TestimonialCard from "@/components/Cards/TestimonialCard.vue"
+import PricingTable from "@/components/PriceTable/PricingTable.vue"
+import Spotlight from "@/components/Cards/Spotlight.vue"
+import SpotlightCard from "@/components/Cards/SpotlightCard.vue"
+
+const testimonials = [
+  {
+    name: "Alice",
+    username: "@alice",
+    body: "This product has changed my life. Highly recommended!",
+    img: "https://randomuser.me/api/portraits/women/1.jpg"
+  },
+  {
+    name: "Bob",
+    username: "@bob",
+    body: "This product has changed my life. Highly recommended!",
+    img: "https://randomuser.me/api/portraits/men/2.jpg"
+  },
+  {
+    name: "Charlie",
+    username: "@charlie",
+    body: "This product has changed my life. Highly recommended!",
+    img: "https://randomuser.me/api/portraits/men/3.jpg"
+  },
+  {
+    name: "Diana",
+    username: "@diana",
+    body: "This product has changed my life. Highly recommended!",
+    img: "https://randomuser.me/api/portraits/women/4.jpg"
+  },
+  {
+    name: "Ethan",
+    username: "@ethan",
+    body: "This product has changed my life. Highly recommended!",
+    img: "https://randomuser.me/api/portraits/men/5.jpg"
+  },
+  {
+    name: "Fiona",
+    username: "@fiona",
+    body: "This product has changed my life. Highly recommended!",
+    img: "https://randomuser.me/api/portraits/women/6.jpg"
+  }
+]
+
+const firstTestimonialsRow = testimonials.slice(0, testimonials.length / 2)
+const secondTestimonialsRow = testimonials.slice(testimonials.length / 2)
+</script>

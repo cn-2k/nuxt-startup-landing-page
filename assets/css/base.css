@@ -3,5 +3,9 @@
 @tailwind utilities;
 
 body {
-  @apply bg-white dark:bg-gray-900 dark:text-gray-200 transition-colors antialiased;
+  @apply bg-white dark:bg-gray-900 dark:text-gray-200 antialiased overflow-x-hidden;
+}
+
+.magic-text {
+  @apply animate-background-pan bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 bg-[length:200%] text-transparent bg-clip-text whitespace-nowrap;
 }

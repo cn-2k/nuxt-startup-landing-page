@@ -18,7 +18,7 @@ export default defineNuxtConfig({
     "nuxt-og-image",
     "@nuxt/icon",
     "@nuxtjs/color-mode",
-    "shadcn-nuxt"
+    "@vueuse/motion/nuxt"
   ],
   eslint: {
     config: {
@@ -32,18 +32,28 @@ export default defineNuxtConfig({
   colorMode: {
     classSuffix: "",
     preference: "system",
-    fallback: "light"
+    fallback: "light",
+    disableTransition: true
   },
-  shadcn: {
-    /**
-     * Prefix for all the imported component
-     */
-    prefix: "",
-    /**
-     * Directory that the component lives in.
-     * @default "./components/ui"
-     */
-    componentDir: "./components/ui"
+  runtimeConfig: {
+    public: {
+      motion: {
+        directives: {
+          "pop-bottom": {
+            initial: {
+              scale: 0,
+              opacity: 0,
+              y: 100
+            },
+            visible: {
+              scale: 1,
+              opacity: 1,
+              y: 0
+            }
+          }
+        }
+      }
+    }
   },
   ssr: false
 })
