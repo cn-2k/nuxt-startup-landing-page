@@ -1,5 +1,5 @@
 <template>
-  <div class="relative">
+  <div>
     <PageSection
       v-motion-fade-visible
       column
@@ -38,48 +38,15 @@
     >
       <div class="relative rounded-xl">
         <div class="w-full h-[10rem] bg-purple-600 mx-auto absolute top-[-4rem] blur-[100px] opacity-40 z-[1]"></div>
-        <ImagePlaceholder
-          border-beam
-          class="[mask-image:linear-gradient(to_bottom,_white_40%,_transparent_100%)] z-[2] relative"
+        <BorderBeam />
+        <img
+          width="1920"
+          height="1080"
+          :src="colorMode.value === 'dark' ? 'https://i.imgur.com/VNfMfim.png' : 'https://i.imgur.com/BU4uuJn.png'"
+          alt="Hero Image"
+          class="max-w-full rounded-xl h-auto mx-auto [mask-image:linear-gradient(to_bottom,_white_40%,_transparent_100%)] z-[2] relative"
         />
       </div>
-      <!-- <div class="flex flex-col items-center justify-center gap-[8rem] text-center px-4">
-        <div class="w-full h-[10rem] bg-zinc-950 mx-auto absolute top-[-4rem] blur-[100px] opacity-30 z-[1]"></div>
-        <div class="flex flex-col items-center justify-center gap-4 text-center">
-          <h1 class="text-6xl font-bold tracking-tight max-w-[40rem] max-[372px]:text-5xl relative hero-heading">
-            Modern & Stunning Website Components
-          </h1>
-          <p class="text-md opacity-80 max-w-[30rem] w-full relative">
-            Easy to use copy and paste components for your website. Make your
-            website 10x more stunning and modern.
-          </p>
-          <div class="flex flex-wrap gap-3 p-2 z-[99]">
-            <a
-              href="/docs/examples/application/AnimatedDock"
-              class="px-4 py-2 bg-white rounded-md text-black font-medium text-[14px] grow"
-            >
-              Browse Examples
-            </a>
-            <a
-              href="/pricing"
-              class="px-4 py-2 bg-zinc-950 rounded-md text-white border border-white border-opacity-10 font-medium text-[14px] grow"
-            >
-              Pricing
-            </a>
-          </div>
-        </div>
-        <div class="relative rounded-xl">
-          <div class="w-full h-[10rem] bg-white mx-auto absolute top-[-4rem] blur-[100px] opacity-20 z-[1]"></div>
-          <div class="rounded-[inherit] [border:calc(1.9*1px)_solid_transparent] ![mask-clip:padding-box,border-box] ![mask-composite:intersect] [mask:linear-gradient(transparent,transparent),linear-gradient(white,white)] absolute inset-0 border-2 border-transparent after:absolute after:aspect-w-1 after:aspect-h-1 after:w-[250px] after:animate-animated-beam after:bg-gradient-to-l after:from-purple-500 after:via-purple-950 after:to-transparent after:[offset-anchor:90%_50%] after:[offset-path:rect(0_auto_auto_0_round_250px)] z-[9999]"></div>
-          <img
-            width="1920"
-            height="1080"
-            src="https://i.imgur.com/tDpuune.png"
-            alt="Hero Image"
-            class="max-w-full rounded-xl h-auto mx-auto [mask-image:linear-gradient(to_bottom,_white_40%,_transparent_100%)] z-[2] relative"
-          />
-        </div>
-      </div> -->
     </PageSection>
 
     <PageSection v-motion-slide-visible-left>
@@ -258,6 +225,8 @@ import TestimonialCard from "@/components/Cards/TestimonialCard.vue"
 import PricingTable from "@/components/PriceTable/PricingTable.vue"
 import Spotlight from "@/components/Cards/Spotlight.vue"
 import SpotlightCard from "@/components/Cards/SpotlightCard.vue"
+
+const colorMode = useColorMode()
 
 const testimonials = [
   {

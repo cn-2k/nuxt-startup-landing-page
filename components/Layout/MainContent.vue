@@ -1,6 +1,6 @@
 <template>
   <main
-    class="min-h-[calc(100vh-4rem)]"
+    class="min-h-[calc(100vh-4rem)] overflow-hidden"
   >
     <slot />
   </main>
