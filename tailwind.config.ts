@@ -1,12 +1,12 @@
+import type { Config } from "tailwindcss"
 import animate from "tailwindcss-animate"
 import AspectRatio from "@tailwindcss/aspect-ratio"
+import defaultTheme from "tailwindcss/defaultTheme"
 
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+export default <Partial<Config>>{
   darkMode: ["class"],
   safelist: ["dark"],
   prefix: "",
-
   theme: {
     container: {
       center: true,
@@ -54,6 +54,9 @@ module.exports = {
         "marquee": "marquee 20s linear infinite",
         "marquee-vertical": "marquee-vertical 20s linear infinite",
         "color-cycle": "color-cycle 8s linear infinite"
+      },
+      fontFamily: {
+        sans: ["DM Sans", ...defaultTheme.fontFamily.sans]
       }
     }
   },

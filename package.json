@@ -19,7 +19,6 @@
     "@nuxtjs/color-mode": "^3.4.2",
     "@vueuse/motion": "^2.2.3",
     "clsx": "^2.1.1",
-    "framer-motion": "^11.2.12",
     "nuxt": "^3.12.2",
     "nuxt-og-image": "^3.0.0-rc.56",
     "tailwindcss-animate": "^1.0.7",
