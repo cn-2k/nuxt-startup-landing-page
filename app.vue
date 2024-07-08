@@ -9,23 +9,20 @@
 </template>
 
 <script setup lang="ts">
-useHead({
-  meta: [
-    { charset: "utf-8" },
-    { name: "viewport", content: "width=device-width, initial-scale=1" }
-  ],
-  // link: [
-  //   { rel: 'icon', href: '/favicon.ico' }
-  // ],
-  htmlAttrs: {
-    lang: "en"
-  }
+useSeoMeta({
+  titleTemplate: "%s - Nuxt 3 Startup Template",
+  ogTitle: "Nuxt 3 Startup Template",
+  title: "Nuxt 3 Startup Template",
+  ogImage: "https://i.imgur.com/VNfMfim.png",
+  twitterImage: "https://i.imgur.com/VNfMfim.png",
+  twitterCard: "summary_large_image",
+  description: "A modern Nuxt 3 Startup Landing Page for your next project.",
+  ogDescription: "A modern Nuxt 3 Startup Landing Page for your next project."
 })
 
-useSeoMeta({
-  titleTemplate: "%s - Nuxt SaaS Template - v2",
-  ogImage: "https://saas-template.nuxt.dev/social-card.png",
-  twitterImage: "https://saas-template.nuxt.dev/social-card.png",
-  twitterCard: "summary_large_image"
+defineOgImageComponent("Nuxt", {
+  headline: false,
+  title: "Nuxt 3 Startup Template",
+  description: "A modern Nuxt 3 Startup Landing Page for your next project."
 })
 </script>

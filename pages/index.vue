@@ -39,13 +39,18 @@
       <div class="relative rounded-xl">
         <div class="w-full h-[10rem] bg-purple-600 mx-auto absolute top-[-4rem] blur-[100px] opacity-40 z-[1]"></div>
         <BorderBeam />
-        <img
-          width="1920"
-          height="1080"
-          :src="colorMode.value === 'dark' ? 'https://i.imgur.com/VNfMfim.png' : 'https://i.imgur.com/BU4uuJn.png'"
-          alt="Hero Image"
-          class="max-w-full rounded-xl h-auto mx-auto [mask-image:linear-gradient(to_bottom,_white_40%,_transparent_100%)] z-[2] relative"
-        />
+        <ClientOnly>
+          <template #fallback>
+            <ImagePlaceholder />
+          </template>
+          <NuxtImg
+            width="1920"
+            height="1080"
+            :src="colorMode.value === 'dark' ? 'https://i.imgur.com/VNfMfim.png' : 'https://i.imgur.com/BU4uuJn.png'"
+            alt="Hero Image"
+            class="max-w-full rounded-xl h-auto mx-auto [mask-image:linear-gradient(to_bottom,_white_40%,_transparent_100%)] z-[2] relative"
+          />
+        </ClientOnly>
       </div>
     </PageSection>
 

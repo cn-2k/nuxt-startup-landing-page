@@ -21,7 +21,14 @@
           <span class="">Start free trial</span>
         </NuxtLink>
       </Button>
-      <DarkModeButton />
+      <ClientOnly fallback-tag="span">
+        <!-- this component will only be rendered on client side -->
+        <DarkModeButton />
+        <template #fallback>
+          <!-- this will be rendered on server side -->
+          <div class="h-6 w-6 p-4 dark:bg-purple-600/20 bg-gray-100 rounded-full"></div>
+        </template>
+      </ClientOnly>
     </template>
   </AppHeader>
 </template>

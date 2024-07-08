@@ -4,18 +4,34 @@ export default defineNuxtConfig({
   devtools: {
     enabled: true
   },
+  site: {
+    // production URL
+    url: "https://nuxt-startup-landing-page.vercel.app/"
+  },
   typescript: {
     strict: false
   },
   future: {
     compatibilityVersion: 4
   },
+  app: {
+    head: {
+      title: "Nuxt 3 Startup Landing Page",
+      htmlAttrs: {
+        lang: "en"
+      },
+      meta: [
+        { charset: "utf-8" },
+        { name: "viewport", content: "width=device-width, initial-scale=1" }
+      ]
+    }
+  },
   modules: [
     "@nuxtjs/tailwindcss",
+    "nuxt-og-image",
     "@nuxt/eslint",
     "@nuxt/image",
     "@nuxt/fonts",
-    "nuxt-og-image",
     "@nuxt/icon",
     "@nuxtjs/color-mode",
     "@vueuse/motion/nuxt"
@@ -55,5 +71,5 @@ export default defineNuxtConfig({
       }
     }
   },
-  ssr: false
+  ssr: true
 })
