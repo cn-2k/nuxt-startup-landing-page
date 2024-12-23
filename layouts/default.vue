@@ -1,12 +1,11 @@
 <template>
   <div>
     <Header />
-
     <MainContent>
       <slot />
     </MainContent>
-
     <AppFooter />
+    <ScrollToTop />
   </div>
 </template>
 

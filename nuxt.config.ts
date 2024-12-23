@@ -4,10 +4,6 @@ export default defineNuxtConfig({
   devtools: {
     enabled: true
   },
-  site: {
-    // production URL
-    url: "https://nuxt-startup-landing-page.vercel.app/"
-  },
   typescript: {
     strict: false
   },
@@ -70,6 +66,5 @@ export default defineNuxtConfig({
         }
       }
     }
-  },
-  ssr: true
+  }
 })
