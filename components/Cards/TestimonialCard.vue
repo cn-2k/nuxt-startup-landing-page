@@ -11,9 +11,9 @@
         :src="props.img"
       />
       <div class="flex flex-col">
-        <figcaption class="text-sm font-medium dark:text-white">
+        <h3 class="text-sm font-medium dark:text-white">
           {{ props.name }}
-        </figcaption>
+        </h3>
         <p class="text-xs font-medium dark:text-white/40">
           {{ props.username }}
         </p>

@@ -21,14 +21,7 @@
           <span class="">Start free trial</span>
         </NuxtLink>
       </Button>
-      <ClientOnly fallback-tag="span">
-        <!-- this component will only be rendered on client side -->
-        <DarkModeButton />
-        <template #fallback>
-          <!-- this will be rendered on server side -->
-          <div class="h-6 w-6 p-4 dark:bg-purple-600/20 bg-gray-100 rounded-full"></div>
-        </template>
-      </ClientOnly>
+      <DarkModeButton />
     </template>
   </AppHeader>
 </template>
@@ -37,18 +30,32 @@
 import AppHeader from "@/components/Layout/Header/AppHeader.vue"
 import DarkModeButton from "@/components/Button/DarkModeButton.vue"
 
-const links = [
+const nuxtApp = useNuxtApp()
+const { activeHeadings, startObservingHeadings } = useScrollspy()
+
+const links = computed(() => [
   {
-    label: "Page 1",
-    to: "/page1"
+    label: "Features",
+    to: "#features",
+    active: activeHeadings.value.includes("features") && !activeHeadings.value.includes("pricing")
   },
   {
-    label: "Page 2",
-    to: "/page2"
+    label: "Pricing",
+    to: "#pricing",
+    active: activeHeadings.value.includes("pricing") && !activeHeadings.value.includes("features")
   },
   {
-    label: "Page 3",
-    to: "/page3"
+    label: "Testimonials",
+    to: "#testimonials",
+    active: activeHeadings.value.includes("testimonials") && !activeHeadings.value.includes("pricing")
   }
-]
+])
+
+nuxtApp.hooks.hookOnce("page:finish", () => {
+  startObservingHeadings([
+    document.querySelector("#features"),
+    document.querySelector("#pricing"),
+    document.querySelector("#testimonials")
+  ])
+})
 </script>

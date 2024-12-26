@@ -81,9 +81,15 @@
     </PageSection>
 
     <PageSection
-      v-motion-pop-visible
+      id="features"
+      class="scroll-mt-10"
       column
     >
+      <SectionBadge
+        text="Features"
+        shiny
+        only-text
+      />
       <div class="text-center flex flex-col items-center">
         <h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl lg:text-5xl">
           Want to see some <span class="magic-text">magic</span> cards?
@@ -118,6 +124,7 @@
     </PageSection>
 
     <PageSection
+      id="pricing"
       v-motion-fade-visible
       column
     >
@@ -140,7 +147,9 @@
     </PageSection>
 
     <PageSection
+      id="testimonials"
       v-motion-fade-visible
+      class="scroll-mt-20"
       column
     >
       <div class="text-center flex flex-col items-center">
@@ -275,3 +284,9 @@ const testimonials = [
 const firstTestimonialsRow = testimonials.slice(0, testimonials.length / 2)
 const secondTestimonialsRow = testimonials.slice(testimonials.length / 2)
 </script>
+
+<style>
+html {
+  scroll-behavior: smooth
+}
+</style>

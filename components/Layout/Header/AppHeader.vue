@@ -22,12 +22,17 @@
             :key="item.to"
             class="relative"
           >
-            <NuxtLink
-              class="text-sm/6 font-semibold flex items-center text-gray-700 dark:text-white dark:hover:text-purple-600 gap-1 hover:text-purple-600 transition-colors"
-              :to="item.to"
+            <a
+              class="text-sm/6 font-semibold flex items-center text-gray-700 dark:hover:text-purple-600 gap-1 hover:text-purple-600 transition-colors"
+              :class="{
+                'text-purple-500 dark:text-purple-500': item.active,
+                'text-gray-700 dark:text-white': !item.active
+              }"
+              :href="item.to"
             >
               {{ item.label }}
-            </NuxtLink>
+
+            </a>
           </li>
         </ul>
       </slot>
@@ -93,6 +98,7 @@
 interface NavLinkProps {
   label: string
   to: string
+  active: boolean
 }
 
 const props = withDefaults(defineProps<{

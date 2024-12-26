@@ -1,15 +1,19 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   css: ["@/assets/css/base.css"],
+
   devtools: {
     enabled: true
   },
+
   typescript: {
     strict: false
   },
+
   future: {
     compatibilityVersion: 4
   },
+
   app: {
     head: {
       title: "Nuxt 3 Startup Landing Page",
@@ -22,6 +26,7 @@ export default defineNuxtConfig({
       ]
     }
   },
+
   modules: [
     "@nuxtjs/tailwindcss",
     "nuxt-og-image",
@@ -32,6 +37,7 @@ export default defineNuxtConfig({
     "@nuxtjs/color-mode",
     "@vueuse/motion/nuxt"
   ],
+
   eslint: {
     config: {
       stylistic: {
@@ -41,12 +47,14 @@ export default defineNuxtConfig({
       }
     }
   },
+
   colorMode: {
     classSuffix: "",
     preference: "system",
     fallback: "light",
     disableTransition: true
   },
+
   runtimeConfig: {
     public: {
       motion: {
@@ -66,5 +74,7 @@ export default defineNuxtConfig({
         }
       }
     }
-  }
+  },
+
+  compatibilityDate: "2024-12-26"
 })

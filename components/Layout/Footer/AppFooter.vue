@@ -28,7 +28,10 @@
       <div class="mt-6 sm:mt-0">
         <ul class="flex items-center space-x-4">
           <li class="w-7 h-7 rounded-full flex items-center justify-center">
-            <a href="javascript:void()">
+            <a
+              href="https://github.com/cn-2k/nuxt-startup-landing-page"
+              target="_blank"
+            >
               <Icon
                 name="i-mdi-github"
                 class="w-7 h-7 text-white"
