@@ -49,6 +49,14 @@ export default <Partial<Config>>{
           "25%": { backgroundColor: "rgb(96, 165, 250)" }, // bg-blue-400
           "50%": { backgroundColor: "rgb(34, 197, 94)" }, // bg-green-500
           "75%": { backgroundColor: "rgb(249, 115, 22)" } // bg-orange-500
+        },
+        risingstar: {
+          from: {
+            transform: 'translateY(0px)'
+          },
+          to: {
+            transform: 'translateY(-3840px)'
+          }
         }
       },
       animation: {
@@ -57,7 +65,8 @@ export default <Partial<Config>>{
         "shimmer": "shimmer 6s infinite",
         "marquee": "marquee 20s linear infinite",
         "marquee-vertical": "marquee-vertical 20s linear infinite",
-        "color-cycle": "color-cycle 8s linear infinite"
+        "color-cycle": "color-cycle 8s linear infinite",
+        risingstar: 'risingstar 1000s linear infinite'
       },
       fontFamily: {
         sans: ["DM Sans", ...defaultTheme.fontFamily.sans]

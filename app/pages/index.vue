@@ -38,7 +38,7 @@
     >
       <div class="relative rounded-xl">
         <div class="w-full h-[10rem] bg-purple-600 mx-auto absolute top-[-4rem] blur-[100px] opacity-40 z-[1]"></div>
-        <BorderBeam :size="500" :duration="12" :delay="9" :border-width="2" />
+        <BorderBeam :size="300" :duration="10" :delay="9" :border-width="2" />
 
         <ClientOnly>
           <template #fallback>
@@ -83,9 +83,10 @@
 
     <PageSection
       id="features"
-      class="scroll-mt-10"
+      class="scroll-mt-10 relative overflow-hidden"
       column
     >
+    <RisingStars :width="8000" />
       <SectionBadge
         text="Features"
         shiny

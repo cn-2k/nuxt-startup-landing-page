@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { defineProps } from "vue"
 import clsx from "clsx"
 
 interface DotPatternProps {
