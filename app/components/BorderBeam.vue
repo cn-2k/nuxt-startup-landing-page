@@ -1,3 +1,39 @@
 <template>
-  <div class="rounded-[inherit] [border:calc(1.9*1px)_solid_transparent] ![mask-clip:padding-box,border-box] ![mask-composite:intersect] [mask:linear-gradient(transparent,transparent),linear-gradient(white,white)] absolute inset-0 border-2 border-transparent after:absolute after:aspect-w-1 after:aspect-h-1 after:w-[250px] after:animate-animated-beam after:bg-gradient-to-l after:from-purple-500 after:via-purple-950 after:to-transparent after:[offset-anchor:90%_50%] after:[offset-path:rect(0_auto_auto_0_round_250px)] z-[9999]"></div>
+  <div
+    :style="{
+      '--size': size,
+      '--duration': duration,
+      '--anchor': anchor,
+      '--border-width': borderWidth,
+      '--color-from': colorFrom,
+      '--color-to': colorTo,
+      '--delay': `-${delay}s`,
+    }"
+    class="absolute inset-[0] z-50 rounded-[inherit] [border:calc(var(--border-width)*1px)_solid_transparent] ![mask-clip:padding-box,border-box] ![mask-composite:intersect] [mask:linear-gradient(transparent,transparent),linear-gradient(white,white)] after:absolute after:aspect-square after:w-[calc(var(--size)*1px)] after:animate-border-beam after:[animation-delay:var(--delay)] after:[background:linear-gradient(to_left,var(--color-from),var(--color-to),transparent)] after:[offset-anchor:calc(var(--anchor)*1%)_50%] after:[offset-path:rect(0_auto_auto_0_round_calc(var(--size)*1px))]"
+  />
 </template>
+
+<script lang="ts">
+  export interface BorderBeamProps {
+    class?: string;
+    size?: number;
+    duration?: number;
+    borderWidth?: number;
+    anchor?: number;
+    colorFrom?: string;
+    colorTo?: string;
+    delay?: number;
+  }
+</script>
+
+<script lang="ts" setup>
+  withDefaults(defineProps<BorderBeamProps>(), {
+    size: 200,
+    duration: 15,
+    anchor: 90,
+    borderWidth: 1.5,
+    colorFrom: "#9c40ff",
+    colorTo: "#fff1",
+    delay: 0,
+  });
+</script>

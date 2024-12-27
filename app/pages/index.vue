@@ -38,7 +38,8 @@
     >
       <div class="relative rounded-xl">
         <div class="w-full h-[10rem] bg-purple-600 mx-auto absolute top-[-4rem] blur-[100px] opacity-40 z-[1]"></div>
-        <BorderBeam />
+        <BorderBeam :size="500" :duration="12" :delay="9" :border-width="2" />
+
         <ClientOnly>
           <template #fallback>
             <ImagePlaceholder />

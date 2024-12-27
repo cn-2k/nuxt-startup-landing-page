@@ -1,12 +1,14 @@
 import type { Config } from "tailwindcss"
 import animate from "tailwindcss-animate"
-import AspectRatio from "@tailwindcss/aspect-ratio"
 import defaultTheme from "tailwindcss/defaultTheme"
 
 export default <Partial<Config>>{
   darkMode: ["class"],
   safelist: ["dark"],
   prefix: "",
+  corePlugins: {
+    aspectRatio: true
+  },
   theme: {
     container: {
       center: true,
@@ -17,8 +19,10 @@ export default <Partial<Config>>{
     },
     extend: {
       keyframes: {
-        "animated-beam": {
-          "100%": { offsetDistance: "100%" }
+        "border-beam": {
+          "100%": {
+            "offset-distance": "100%",
+          },
         },
         "background-pan": {
           from: { backgroundPosition: "0% center" },
@@ -48,7 +52,7 @@ export default <Partial<Config>>{
         }
       },
       animation: {
-        "animated-beam": "animated-beam 10s linear infinite",
+        "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
         "background-pan": "background-pan 3s linear infinite",
         "shimmer": "shimmer 6s infinite",
         "marquee": "marquee 20s linear infinite",
@@ -60,5 +64,5 @@ export default <Partial<Config>>{
       }
     }
   },
-  plugins: [animate, AspectRatio]
+  plugins: [animate]
 }
