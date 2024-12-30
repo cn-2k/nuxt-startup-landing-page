@@ -86,7 +86,7 @@
       class="scroll-mt-10 relative overflow-hidden"
       column
     >
-    <RisingStars :width="8000" />
+    <RisingStars :width="8000" class="-z-50" />
       <SectionBadge
         text="Features"
         shiny
