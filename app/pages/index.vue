@@ -86,7 +86,7 @@
       class="scroll-mt-10 relative overflow-hidden"
       column
     >
-    <RisingStars :width="8000" class="-z-50" />
+    <ClientOnly><RisingStars :width="8000" class="-z-50" /></ClientOnly>
       <SectionBadge
         text="Features"
         shiny
@@ -199,7 +199,7 @@
       <div
         class="rounded-xl divide-y divide-gray-200 dark:divide-gray-800 ring-1 ring-gray-200 dark:ring-gray-800 shadow relative bg-gray-100/50 dark:bg-gray-800/50"
       >
-        <DotPattern class="[mask-image:radial-gradient(500px_circle_at_center,white,transparent)] opacity-40 lg:opacity-100" />
+        <ClientOnly><DotPattern class="[mask-image:radial-gradient(500px_circle_at_center,white,transparent)] opacity-40 lg:opacity-100" /></ClientOnly>
         <div class="absolute inset-0 flex justify-center items-center z-[-1]">
           <div class="w-80 h-80 bg-purple-500 rounded-full opacity-90 dark:opacity-60 blur-[120px] animate-color-cycle" />
         </div>

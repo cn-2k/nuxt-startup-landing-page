@@ -9,19 +9,19 @@
     <template #right>
       <Button variant="link">
         <NuxtLink
-          href="/login"
+          to="#"
         >
           <span class="">Sign in</span>
         </NuxtLink>
       </Button>
       <Button>
         <NuxtLink
-          href="/free-trial"
+          to="#"
         >
           <span class="">Start free trial</span>
         </NuxtLink>
       </Button>
-      <DarkModeButton />
+      <ClientOnly><DarkModeButton /></ClientOnly>
     </template>
   </AppHeader>
 </template>
